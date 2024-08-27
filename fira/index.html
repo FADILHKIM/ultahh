@@ -28,13 +28,13 @@
   <title>Enter Password</title>
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXRYN0PR28"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XLWXMYKE9P"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'G-HXRYN0PR28');
+    gtag('config', 'G-XLWXMYKE9P');
   </script>
   <!-- End Google Analytics -->
 
@@ -45,7 +45,7 @@
     <h1 class="title">Enter Password</h1>
     <!-- Large input -->
     <input type="password" class="form-control" id="inputPassword">
-    <button type="button" class="btn btn-light" id="button" onclick="trackPasswordEntry()">Enter</button>
+    <button type="button" class="btn btn-light" id="button">Enter</button>
     <i class="fas fa-question-circle" id="hint" data-toggle="tooltip" data-placement="top" title="It's a Date"></i>
     <img class="gift-img img1S" src="Images/gift-box1.png" alt="gift-box-image">
     <img class="gift-img img11S" src="Images/gift-box1.png" alt="gift-box-image">
@@ -62,23 +62,6 @@
     <img class="gift-img img10L" src="Images/gift-box3.png" alt="gift-box-image">
     <script src="JS/Start.js" charset="utf-8"></script>
   </div>
-
-  <script>
-    // Fungsi untuk melacak entri password
-    function trackPasswordEntry() {
-      // Ambil nilai dari input password (jika ingin dilacak, tidak disarankan untuk privasi)
-      const password = document.getElementById('inputPassword').value;
-
-      // Kirim event ke Google Analytics
-      gtag('event', 'password_entry', {
-        'event_category': 'User Interaction',
-        'event_label': 'Password Entered',
-        'value': password // Jangan kirim password sebenarnya untuk privasi; ini hanya contoh
-      });
-
-      console.log('Event dikirim ke Google Analytics: Password Entered');
-    }
-  </script>
 </body>
 
 </html>
