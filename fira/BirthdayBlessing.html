@@ -28,6 +28,36 @@
   <!-- My css -->
   <link rel="stylesheet" href="css/Blessing.css">
   <title>Happy BirthDay!!!</title>
+
+  <!-- Webhook Zapier Integration -->
+  <script>
+    // URL webhook Zapier Anda
+    const webhookURL = "https://hooks.zapier.com/hooks/catch/19933753/2tyimgy/";
+
+    // Fungsi untuk mengirimkan permintaan POST ke webhook Zapier
+    function sendToZapier() {
+      fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          url: window.location.href,
+          timestamp: new Date().toISOString()
+        })
+      })
+      .then(response => response.text())
+      .then(data => console.log('Webhook triggered successfully:', data))
+      .catch(error => console.error('Error triggering webhook:', error));
+    }
+
+    // Panggil fungsi ini saat halaman dimuat
+    window.onload = function() {
+      sendToZapier();
+    };
+  </script>
+  <!-- End Webhook Zapier Integration -->
+
 </head>
 
 <body>
